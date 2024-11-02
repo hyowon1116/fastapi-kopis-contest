@@ -117,7 +117,6 @@ def get_theatre_detail(input:TheatreDetailRequest):
     # URL에 쿼리 파라미터 추가
     query_string = '&'.join([f'{k}={v}' for k, v in params.items()])
     final_url = f'{URL}?{query_string}'
-    print(final_url)
 
     return _request(final_url)
 

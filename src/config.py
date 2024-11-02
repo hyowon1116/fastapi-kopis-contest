@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     KOPISSERVICEKEY:str
     SECRET_KEY:Optional[str]=None
-    DATABASE_URL:Optional[str]=None
+    DATABASE_FILE:Optional[str]=None
     
     model_config = SettingsConfigDict(env_file=".env")
 

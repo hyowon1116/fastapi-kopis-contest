@@ -5,6 +5,7 @@ from src.config import get_settings
 
 #디비 파일명
 database_file = get_settings().DATABASE_FILE
+
 #디비연결. 
 database_connection_string = f'sqlite:///{database_file}'
 connect_args = {"check_same_thread":False}
