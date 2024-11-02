@@ -4,13 +4,9 @@ import requests
 from requests_toolbelt import MultipartEncoder
 import xmltodict
 
-import src.config as config
-from src.data.dataclasses import *
+from src.config import get_settings
+from src.data.kopis import *
 from src.logger import ServingLogger
-
-@lru_cache
-def get_settings():
-    return config.Settings()
 
 KOPISSERVICEKEY = get_settings().KOPISSERVICEKEY
 
