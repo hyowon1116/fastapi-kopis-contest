@@ -1,0 +1,19 @@
+services:
+  backend:
+    build:
+      context: ./
+    image: "kopis-backend"
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    volumes:
+      - ./src:/code/src
+    deploy:
+      resources:
+        limits:
+          cpus: "0.4"
+          memory: 500M
+        reservations:
+          cpus: "0.4"
+          memory: 200M
