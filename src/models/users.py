@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel, EmailStr
 from sqlmodel import Field, SQLModel
 
@@ -5,7 +6,10 @@ from sqlmodel import Field, SQLModel
 class User(SQLModel, table=True):
 	email: EmailStr = Field(primary_key=True)
 	username: str
-    
+	role: str #공연제작자: playwright / 공연시설: theater/ 일반: general
+	mt10id: Optional[str] # 공연시설id
+
+
 class Signup(SQLModel):
 	email: EmailStr
 	username: str
