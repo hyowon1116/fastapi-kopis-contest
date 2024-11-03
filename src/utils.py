@@ -7,7 +7,8 @@ from src.logger import ServingLogger
 INSTALLED_ROUTERS = [
     "src.routers.main",
     "src.routers.kopis",
-    "src.routers.users",
+    "src.routers.user",
+    "src.routers.rent",
 
 ]
 def get_all_user_routers() -> List[APIRouter]:
