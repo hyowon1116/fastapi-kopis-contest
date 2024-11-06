@@ -1,16 +1,15 @@
 from typing import List, Optional
-from src.data.job import *
 from fastapi import APIRouter
 
-from src.data.kopis import *
+from src.data.culture import *
 from src.logger import ServingLogger
 
-router = APIRouter(prefix="/job")
+router = APIRouter(prefix="/culture")
 
 #공연목록
-@router.post("/")
+@router.post("/job")
 def get_job(input:JobRequest) -> Optional[List[JobResponse]]:
 
-    from src.api.job import get_job as _get_job
+    from src.api.culture import get_job as _get_job
     data = _get_job(input)
     return data if isinstance(data, list) else [data]

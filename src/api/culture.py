@@ -5,10 +5,10 @@ from requests_toolbelt import MultipartEncoder
 import xmltodict
 
 from src.config import get_settings
-from src.data.job import *
+from src.data.culture import *
 from src.logger import ServingLogger
 
-JOBSERVICEKEY = get_settings().JOBSERVICEKEY
+CULTURESERVICEKEY = get_settings().CULTURESERVICEKEY
 
 
 def _request(final_url):
@@ -30,7 +30,7 @@ def get_job(input:JobRequest):
     URL = 'http://api.kcisa.kr/API_CIA_077/request'
     
     params = {
-        "serviceKey": JOBSERVICEKEY  # API 인증키
+        "serviceKey": CULTURESERVICEKEY  # API 인증키
         }
     if input.numOfRows:
         params['numOfRows'] = input.numOfRows

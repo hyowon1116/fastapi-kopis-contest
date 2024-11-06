@@ -9,9 +9,9 @@ INSTALLED_ROUTERS = [
     "src.routers.kopis",
     "src.routers.user",
     "src.routers.rent",
-    "src.routers.job"
-
+    "src.routers.culture"
 ]
+
 def get_all_user_routers() -> List[APIRouter]:
     routers = []
     for module_path in INSTALLED_ROUTERS:

@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     KOPISSERVICEKEY:str
     SECRET_KEY:Optional[str]=None
     DATABASE_FILE:Optional[str]=None
-    JOBSERVICEKEY:Optional[str]=None
+    CULTURESERVICEKEY:Optional[str]=None
 
     
     model_config = SettingsConfigDict(env_file=".env")
