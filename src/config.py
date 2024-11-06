@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     SECRET_KEY:Optional[str]=None
     DATABASE_FILE:Optional[str]=None
     CULTURESERVICEKEY:Optional[str]=None
+    CULTUREEVENTSERVICEKEY:Optional[str]=None
 
     
     model_config = SettingsConfigDict(env_file=".env")
