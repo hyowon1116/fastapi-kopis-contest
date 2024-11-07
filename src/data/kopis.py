@@ -115,7 +115,7 @@ class _SubFacility(BaseModel):
     stagearea: Optional[str]  # 무대 면적 (선택적)
 
 class _mt13(BaseModel):
-    mt13:List[_SubFacility]
+    mt13: Union[_SubFacility, List[_SubFacility]]
 
 class TheatreDetailResponse(BaseModel):
     fcltynm: Optional[str] = None          # 공연시설명
