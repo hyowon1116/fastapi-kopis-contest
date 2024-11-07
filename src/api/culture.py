@@ -15,8 +15,8 @@ def _request(final_url):
         # ServingLogger().info(request.content)
         data = xmltodict.parse(request.content)
         try:
-            result = data['response']['body']['items']
-            return result['item'] if result else result
+            result = data['response']['body']
+            return result
         except: 
             return []
 
@@ -55,6 +55,5 @@ def get_event(input:EventRequest):
 
     query_string = '&'.join([f'{k}={v}' for k, v in params.items()])
     final_url = f'{URL}?{query_string}'
-    print(final_url)
 
     return _request(final_url)

@@ -7,7 +7,7 @@ class JobRequest(BaseModel):
     pageNo: Optional[int]=1  
     keyword: Optional[str]=None 
 
-class JobResponse(BaseModel):
+class _JobResponse(BaseModel):
     title: Optional[str]=None
     description:Optional[str]=None
     subDescription:Optional[str]=None
@@ -19,11 +19,20 @@ class JobResponse(BaseModel):
     temporalCoverage:Optional[str]=None
     period:Optional[str]=None
 
+class JobItems(BaseModel):
+    item: Optional[List[_JobResponse]]
+
+class JobResponse(BaseModel):
+    items: Optional[JobItems]
+    numOfRows: Optional[str]
+    pageNo: Optional[str]
+    totalCount:Optional[str]
+
 class EventRequest(BaseModel):
     numOfRows: Optional[int]=10
     pageNo: Optional[int]=1  
 
-class EventResponse(BaseModel):
+class _EventResponse(BaseModel):
     publisher: Optional[str]=None
     collectionDb:Optional[str]=None
     creator:Optional[str]=None
@@ -35,4 +44,12 @@ class EventResponse(BaseModel):
     description: Optional[str]=None
     subjectCategory:Optional[str]=None
     sourceTitle:Optional[str]=None
-    
+
+class Item(BaseModel):
+    item: Optional[List[_EventResponse]]
+
+class EventResponse(BaseModel):
+    items: Optional[Item]
+    numOfRows: Optional[str]
+    pageNo: Optional[str]
+    totalCount:Optional[str]
