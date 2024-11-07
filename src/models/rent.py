@@ -12,10 +12,8 @@ class RentBase(SQLModel):
 	fcltynm: str
 	prfplcnm: str
 	entrpsnm: str
-	prfplcnm: str
 	telno: str
 	repnm: str
-	email: str
 	prfruntime: str
 	prfpdfrom: str
 	prfpdto: str
@@ -24,7 +22,6 @@ class RentBase(SQLModel):
 	prfdescribe: str
 	user_email:str
 	mt30Id: Optional[str]
-
 
 # RentBase를 상속하여 사용
 class Rent(RentBase, table=True):

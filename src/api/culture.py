@@ -38,7 +38,6 @@ def get_job(input:JobRequest):
 
     query_string = '&'.join([f'{k}={v}' for k, v in params.items()])
     final_url = f'{URL}?{query_string}'
-    print(final_url)
 
     return _request(final_url)
 

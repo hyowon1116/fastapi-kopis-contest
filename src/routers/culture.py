@@ -8,14 +8,14 @@ router = APIRouter(prefix="/culture")
 
 #공연목록
 @router.post("/job")
-def get_job(input:JobRequest) -> Optional[List[JobResponse]]:
+def get_job(input:JobRequest) -> Optional[JobResponse]:
 
     from src.api.culture import get_job as _get_job
     data = _get_job(input)
-    return data if isinstance(data, list) else [data]
+    return data
 
 @router.post("/event")
-def get_event(input:EventRequest) -> Optional[List[EventResponse]]:
+def get_event(input:EventRequest) -> Optional[EventResponse]:
     from src.api.culture import get_event as _get_event
     data = _get_event(input)
-    return data if isinstance(data, list) else [data]
+    return data
