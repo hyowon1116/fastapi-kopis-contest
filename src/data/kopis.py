@@ -97,7 +97,7 @@ class TheatreResponse(BaseModel):
     fcltychartr: Optional[str] = None  # 시설특성
     sidonm: Optional[str] = None   # 지역(시도)
     gugunnm: Optional[str] = None  # 지역(구군)
-    opende: Optional[int] = None   # 개관연도
+    opende: Optional[str] = None   # 개관연도
 
 
 class TheatreDetailRequest(BaseModel):
@@ -106,12 +106,12 @@ class TheatreDetailRequest(BaseModel):
 class _SubFacility(BaseModel):
     prfplcnm: Optional[str]           # 공연장명
     mt13id: Optional[str]             # 공연장 ID
-    seatscale: Optional[int]          # 좌석 수
+    seatscale: Optional[str]          # 좌석 수
     stageorchat: Optional[str]        # 무대/좌석 여부
     stagepracat: Optional[str]        # 무대/연습실 여부
     stagedresat: Optional[str]        # 무대/좌석 여부
     stageoutdrat: Optional[str]       # 무대/외부 여부
-    disabledseatscale: Optional[int]  # 장애인 좌석 수 (선택적)
+    disabledseatscale: Optional[str]  # 장애인 좌석 수 (선택적)
     stagearea: Optional[str]  # 무대 면적 (선택적)
 
 class _mt13(BaseModel):
@@ -120,15 +120,15 @@ class _mt13(BaseModel):
 class TheatreDetailResponse(BaseModel):
     fcltynm: Optional[str] = None          # 공연시설명
     mt10id: Optional[str] = None           # 공연시설 ID
-    mt13cnt: Optional[int] = None          # 공연장 수
+    mt13cnt: Optional[str] = None          # 공연장 수
     fcltychartr: Optional[str] = None      # 시설 특성
-    opende: Optional[int] = None           # 개관 연도
-    seatscale: Optional[int] = None        # 총 좌석 수
+    opende: Optional[str] = None           # 개관 연도
+    seatscale: Optional[str] = None        # 총 좌석 수
     telno: Optional[str] = None            # 전화번호
     relateurl: Optional[str] = None        # 관련 URL
     adres: Optional[str] = None            # 주소
-    la: Optional[float] = None             # 위도
-    lo: Optional[float] = None             # 경도
+    la: Optional[str] = None             # 위도
+    lo: Optional[str] = None             # 경도
     restaurant: Optional[str] = None       # 음식점 여부
     cafe: Optional[str] = None             # 카페 여부
     store: Optional[str] = None            # 상점 여부
@@ -212,7 +212,7 @@ class CompanyPlayRequest(BaseModel):
     mt30Id: str
 
 class CompanyPlayResponse(BaseModel):
-    rnum: Optional[int] = None  # 순번
+    rnum: Optional[str] = None  # 순번
     mt20Id: Optional[str] = None  # 공연 ID
     prfNm: Optional[str] = None  # 공연명
     prfPdFrom: Optional[str] = None  # 공연 시작일
@@ -239,8 +239,8 @@ class TheatreStatRequest(BaseModel):
 class TheatreStatResponse(BaseModel):
     prfnmfct: Optional[str] = None  # 공연시설명
     prfnmplc: Optional[str] = None  # 공연장명
-    seatcnt: Optional[int] = None  # 좌석수
-    prfcnt: Optional[int] = None  # 공연건수
-    prfprocnt: Optional[int] = None  # 개막편수
-    prfdtcnt: Optional[int] = None  # 상연횟수
-    totnmrs: Optional[int] = None  # 총 티켓판매수
+    seatcnt: Optional[str] = None  # 좌석수
+    prfcnt: Optional[str] = None  # 공연건수
+    prfprocnt: Optional[str] = None  # 개막편수
+    prfdtcnt: Optional[str] = None  # 상연횟수
+    totnmrs: Optional[str] = None  # 총 티켓판매수
