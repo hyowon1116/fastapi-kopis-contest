@@ -212,7 +212,7 @@ class CompanyPlayRequest(BaseModel):
     mt30Id: str
 
 class CompanyPlayResponse(BaseModel):
-    rnum: Optional[str] = None  # 순번
+    rnum: Optional[int] = None  # 순번
     mt20Id: Optional[str] = None  # 공연 ID
     prfNm: Optional[str] = None  # 공연명
     prfPdFrom: Optional[str] = None  # 공연 시작일
