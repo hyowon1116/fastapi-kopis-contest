@@ -2,9 +2,11 @@ services:
   backend:
     build:
       context: ./
-    image: "kopis-backend"
+    image: "571600850390.dkr.ecr.ap-northeast-2.amazonaws.com/kopis/kopis-repo:fastapi-v0.1.0"
     env_file:
       - .env
+    networks:
+      - kopis-net
     ports:
       - 8000:8000
     volumes:
@@ -12,8 +14,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "0.4"
+          cpus: "1"
           memory: 500M
         reservations:
-          cpus: "0.4"
+          cpus: "0.2"
           memory: 200M
+networks:
+  kopis-net:
+    external: true
