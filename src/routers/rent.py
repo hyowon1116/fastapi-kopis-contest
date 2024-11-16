@@ -42,7 +42,7 @@ async def delete_rent(rent_id: int, user: str, session=Depends(get_session)):
     try:
         _rent = session.exec(select(Rent).filter(Rent.id == rent_id)).one()
         # 요청한 유저가 이벤트 소유자인지 검사한다. 아니라면 소유자가 아니므로 에러를 출력한다.
-        if (user == _rent.entrpsUser_email):
+        if (user == _rent.user_email):
             session.delete(_rent)
             session.commit()
             return {
